@@ -8,7 +8,13 @@ endif()
 
 project ("Xenia")
 
+find_package(fmt CONFIG REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+
 # Add source to this project's executable.
 add_executable (Xenia "src/main.cpp" )
+
+target_link_libraries(Xenia PRIVATE fmt::fmt)
+target_link_libraries(Xenia PRIVATE glfw)
 
 set_property(TARGET Xenia PROPERTY CXX_STANDARD 23)
