@@ -10,11 +10,11 @@ project ("Xenia")
 
 find_package(fmt CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
+find_package(Vulkan REQUIRED)
 
 # Add source to this project's executable.
-add_executable (Xenia "src/main.cpp" )
+add_executable (Xenia "src/main.cpp" "src/Core/RenderCore.hpp" "src/Core/RenderCore.cpp")
 
-target_link_libraries(Xenia PRIVATE fmt::fmt)
-target_link_libraries(Xenia PRIVATE glfw)
+target_link_libraries(Xenia PRIVATE fmt::fmt glfw Vulkan::Vulkan)
 
-set_property(TARGET Xenia PROPERTY CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 23)
