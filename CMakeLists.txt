@@ -13,7 +13,7 @@ find_package(glfw3 CONFIG REQUIRED)
 find_package(Vulkan REQUIRED)
 
 # Add source to this project's executable.
-add_executable (Xenia "src/main.cpp" "src/Core/RenderCore.hpp" "src/Core/RenderCore.cpp")
+add_executable (Xenia "src/main.cpp" "src/Engine/VulkanApp.hpp" "src/Engine/VulkanApp.cpp")
 
 target_link_libraries(Xenia PRIVATE fmt::fmt glfw Vulkan::Vulkan)
 
